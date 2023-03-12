@@ -90,6 +90,13 @@ input:checked ~ label > .accordion-icon {
         margin: 0 auto;
     }
 
+    .accordions-container:hover > .accordion > label {
+        color: black;
+    }
+    .accordions-container:hover > .accordion > label > .accordion-icon {
+        opacity: 1;
+    }
+
     h1 {
         font-size: 72px;
     }
@@ -97,6 +104,16 @@ input:checked ~ label > .accordion-icon {
     label {
         font-size: 30px;
         transition: .2s all ease-in;
+        color: blue;
+    }
+
+    label:hover > .content {
+        max-height: 500px;
+        transform: scale(1);
+    }
+
+    .accordion-icon {
+        opacity: 0;
     }
 
     .content {
@@ -107,5 +124,9 @@ input:checked ~ label > .accordion-icon {
     input:checked ~ label > .content{
         max-height: 500px;
         transform: scale(1);
+    }
+
+    input:checked ~ label {
+        color: black;
     }
 }
