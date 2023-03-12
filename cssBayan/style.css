@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 0.75rem;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
-    padding: 10px;
+    padding: 0.62rem;
 }
 
 .accordion {
@@ -24,9 +24,9 @@ label {
     display: grid;
     grid-template-columns: 2fr 1fr;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 700;
-    padding: 10px;
+    padding: 0.62rem;
     align-items: center;
 }
 
@@ -34,8 +34,8 @@ label {
     display: block;
     background-image: url("./icons/arrow.svg");
     background-size: cover;
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     transition: .3s all ease-in-out;
     justify-self: end;
 }
@@ -43,11 +43,13 @@ label {
 .content {
     width: 100%;
     max-height: 0;
+    max-width: 27rem;
     transform: scale(0);
     overflow: hidden;
     transition: .3s all ease-in-out;
     grid-column-start: 1;
     grid-column-end: 3;
+    justify-self: center;
 }
 
 img {
@@ -55,7 +57,7 @@ img {
 }
 
 input:checked ~ label > .content{
-    max-height: 400px;
+    max-height: 27rem;
     transform: scale(1);
 }
 
@@ -65,20 +67,19 @@ input:checked ~ label > .accordion-icon {
 
 @media (min-width:820px) or (min-height:1180px) {
     h1 {
-        font-size: 100px;
+        font-size: 6rem;
     }
 
     label {
-        font-size: 50px;
+        font-size: 3rem;
     }
 
     .content {
-        max-width: 800px;
-        justify-self: center;
+        max-width: 40rem;
     }
 
     input:checked ~ label > .content{
-        max-height: 800px;
+        max-height: 40rem;
         transform: scale(1);
     }
 }
@@ -86,7 +87,7 @@ input:checked ~ label > .accordion-icon {
 @media (min-width:1170px) {
     .accordions-container {
         width: 100%;
-        max-width: 1170px;
+        max-width: 80rem;
         margin: 0 auto;
     }
 
@@ -97,18 +98,13 @@ input:checked ~ label > .accordion-icon {
         opacity: 1;
     }
 
-    h1 {
-        font-size: 72px;
-    }
-
     label {
-        font-size: 30px;
         transition: .2s all ease-in;
         color: blue;
     }
 
     label:hover > .content {
-        max-height: 500px;
+        max-height: 40rem;
         transform: scale(1);
     }
 
@@ -121,13 +117,7 @@ input:checked ~ label > .accordion-icon {
     }
 
     .content {
-        max-width: 500px;
         justify-self: center;
-    }
-
-    input:checked ~ label > .content{
-        max-height: 500px;
-        transform: scale(1);
     }
 
     input:checked ~ label {
