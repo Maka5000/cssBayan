@@ -63,7 +63,7 @@ input:checked ~ label > .accordion-icon {
     transform: rotate(180deg);
 }
 
-@media (min-width:820px) {
+@media (min-width:820px) or (min-height:1180px) {
     h1 {
         font-size: 100px;
     }
@@ -79,6 +79,33 @@ input:checked ~ label > .accordion-icon {
 
     input:checked ~ label > .content{
         max-height: 800px;
+        transform: scale(1);
+    }
+}
+
+@media (min-width:1920px) {
+    .accordions-container {
+        width: 100%;
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    label {
+        font-size: 30px;
+        transition: .2s all ease-in;
+    }
+
+    .content {
+        max-width: 500px;
+        justify-self: center;
+    }
+
+    input:checked ~ label > .content{
+        max-height: 500px;
         transform: scale(1);
     }
 }
