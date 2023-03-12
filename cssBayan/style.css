@@ -5,22 +5,29 @@
     font-size: 16px;
 }
 
-.accordion {
-    transition: .3s all ease;
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 10px;
 }
 
-input[type="radio"] {
+.accordion {
+    transition: .3s all ease;
+    border-top: 1px solid gray;
+}
+
+input {
     display: none;
 }
 
 label {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     cursor: pointer;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 700;
     padding: 10px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .accordion-icon {
@@ -30,6 +37,7 @@ label {
     width: 20px;
     height: 20px;
     transition: .3s all ease-in-out;
+    justify-self: end;
 }
 
 .content {
@@ -38,13 +46,15 @@ label {
     transform: scale(0);
     overflow: hidden;
     transition: .3s all ease-in-out;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 img {
     width: 100%;
 }
 
-input:checked ~ .content{
+input:checked ~ label > .content{
     max-height: 400px;
     transform: scale(100%);
 }
