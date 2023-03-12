@@ -112,6 +112,10 @@ input:checked ~ label > .accordion-icon {
         transform: scale(1);
     }
 
+    label:hover > .accordion-icon {
+        transform: rotate(180deg);
+    }
+
     .accordion-icon {
         opacity: 0;
     }
