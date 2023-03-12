@@ -5,6 +5,10 @@
     font-size: 16px;
 }
 
+.accordion {
+    transition: .3s all ease;
+}
+
 input[type="radio"] {
     display: none;
 }
@@ -13,14 +17,38 @@ label {
     display: flex;
     cursor: pointer;
     font-size: 23px;
+    font-weight: 700;
     padding: 10px;
     align-items: center;
     justify-content: space-between;
 }
 
-span {
+.accordion-icon {
     display: block;
-    background-image: url("./icons/x_icon.svg");
-    width: 32px;
-    height: 32px;
+    background-image: url("./icons/arrow.svg");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    transition: .3s all ease-in-out;
+}
+
+.content {
+    width: 100%;
+    max-height: 0;
+    transform: scale(0);
+    overflow: hidden;
+    transition: .3s all ease-in-out;
+}
+
+img {
+    width: 100%;
+}
+
+input:checked ~ .content{
+    max-height: 400px;
+    transform: scale(100%);
+}
+
+input:checked ~ label > .accordion-icon {
+    transform: rotate(180deg);
 }
