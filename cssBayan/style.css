@@ -83,7 +83,7 @@ input:checked ~ label > .accordion-icon {
     }
 }
 
-@media (min-width:1920px) {
+@media (min-width:1170px) {
     .accordions-container {
         width: 100%;
         max-width: 1170px;
