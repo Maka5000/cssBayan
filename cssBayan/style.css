@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 0.75rem;
+}
+
+body {
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 0.62rem;
+}
+
+.accordion {
+    transition: .3s all ease;
+    border-top: 1px solid gray;
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.62rem;
+    align-items: center;
+}
+
+.accordion-icon {
+    display: block;
+    background-image: url("./icons/arrow.svg");
+    background-size: cover;
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: .3s all ease-in-out;
+    justify-self: end;
+}
+
+.content {
+    width: 100%;
+    max-height: 0;
+    max-width: 27rem;
+    transform: scale(0);
+    overflow: hidden;
+    transition: .3s all ease-in-out;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+}
+
+img {
+    width: 100%;
+}
+
+input:checked ~ label > .content{
+    max-height: 27rem;
+    transform: scale(1);
+}
+
+input:checked ~ label > .accordion-icon {
+    transform: rotate(180deg);
+}
+
+@media (min-width:820px) or (min-height:1180px) {
+    h1 {
+        font-size: 6rem;
+    }
+
+    label {
+        font-size: 3rem;
+    }
+
+    .content {
+        max-width: 40rem;
+    }
+
+    input:checked ~ label > .content{
+        max-height: 40rem;
+        transform: scale(1);
+    }
+}
+
+@media (min-width:1170px) {
+    .accordions-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .accordions-container:hover > .accordion > label {
+        color: black;
+    }
+    .accordions-container:hover > .accordion > label > .accordion-icon {
+        opacity: 1;
+    }
+
+    label {
+        transition: .2s all ease-in;
+        color: blue;
+    }
+
+    label:hover > .content {
+        max-height: 40rem;
+        transform: scale(1);
+    }
+
+    label:hover > .accordion-icon {
+        transform: rotate(180deg);
+    }
+
+    .accordion-icon {
+        opacity: 0;
+    }
+
+    .content {
+        justify-self: center;
+    }
+
+    input:checked ~ label {
+        color: black;
+    }
+}
